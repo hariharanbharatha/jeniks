@@ -16,7 +16,6 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                // stop and remove old container if exists
                 sh '''
                     docker rm -f jeniks-container || true
                     docker run -d --name jeniks-container -p 3000:3000 jeniks-app:latest
@@ -25,4 +24,5 @@ pipeline {
         }
     }
 }
+
 
